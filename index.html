@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BD Address Auto Complate</title>
+    <script src="/main.js"></script>
+</head>
+<body>
+    <label for="division">Select Division:</label>
+    <select name="division" id="division" onchange="getDistricts()">
+    <option value="">--Select Division--</option>
+    <option value="Dhaka">Dhaka</option>
+    <option value="Barisal">Barisal</option>
+    <option value="Mymensingh">Mymensingh</option>
+    <option value="Rangpur">Rangpur</option>
+    <option value="Sylhet">Sylhet</option>
+    <option value="Chittagong">Chittagong</option>
+    <option value="Rajshahi">Rajshahi</option>
+    <option value="Khulna">Khulna</option>
+    </select>
+
+    <label for="district">Select District:</label>
+    <select name="district" id="district" onchange="getUpazilas()">
+    <option value="">--Select District--</option>
+    </select>
+
+    <label for="upazila">Select Upazila:</label>
+    <select name="upazila" id="upazila">
+    <option value="">--Select Upazila--</option>
+    </select>
+
+    <script>
+          function getDistricts() {
+    const divisionSelect = document.getElementById("division");
+    const districtSelect = document.getElementById("district");
+    const division = divisionSelect.options[divisionSelect.selectedIndex].value;
+    districtSelect.innerHTML = "";
+    
+    switch(division) {
+      case "Dhaka":
+        districtSelect.innerHTML = `
+            <option value="Dhaka">--Select Districts--</option>
+            <option value="Dhaka">Dhaka</option>
+            <option value="Faridpur">Faridpur</option>
+            <option value="Gazipur">Gazipur</option>
+            <option value="Gopalganj">Gopalganj</option>
+            <option value="Kishoreganj">Kishoreganj</option>
+            <option value="Madaripur">Madaripur</option>
+            <option value="Manikganj">Manikganj</option>
+            <option value="Munshiganj">Munshiganj</option>
+            <option value="Narayanganj">Narayanganj</option>
+            <option value="Narsingdi">Narsingdi</option>
+            <option value="Rajbari">Rajbari</option>
+            <option value="Shariatpur">Shariatpur</option>
+            <option value="Tangail">Tangail</option>
+        `;
+        break;
+
+        case "Barisal":
+        districtSelect.innerHTML = `
+            <option value="Dhaka">--Select Districts--</option>
+            <option value="Barguna">Barguna</option>
+            <option value="Barisal">Barisal</option>
+            <option value="Bhola">Bhola</option>
+            <option value="Jhalokati">Jhalokati</option>
+            <option value="Patuakhali">Patuakhali</option>
+            <option value="Pirojpur">Pirojpur</option>
+        `;
+        break;
+        
+        case "Rangpur":
+        districtSelect.innerHTML = `
+            <option value="Dhaka">--Select Districts--</option>
+            <option value="Dinajpur">Dinajpur</option>
+            <option value="Gaibandha">Gaibandha</option>
+            <option value="Kurigram">Kurigram</option>
+            <option value="Lalmonirhat">Lalmonirhat</option>
+            <option value="Nilphamari">Nilphamari</option>
+            <option value="Panchagarh">Panchagarh</option>
+            <option value="Rangpur">Rangpur</option>
+            <option value="Thakurgaon">Thakurgaon</option>
+        `;
+        break;
+
+        case "Mymensingh":
+        districtSelect.innerHTML = `
+            <option value="Dhaka">--Select Districts--</option>
+            <option value="Jamalpur">Jamalpur</option>
+            <option value="Mymensingh">Mymensingh</option>
+            <option value="Netrokona">Netrokona</option>
+            <option value="Sherpur">Sherpur</option>
+        `;
+        break;
+
+        case "Sylhet":
+        districtSelect.innerHTML = `
+            <option value="Dhaka">--Select Districts--</option>
+            <option value="Habiganj">Habiganj</option>
+            <option value="Maulvibazar">Maulvibazar</option>
+            <option value="Sunamganj">Sunamganj</option>
+            <option value="Sylhet">Sylhet</option>
+        `;
+        break;
+        
+      case "Chittagong":
+        districtSelect.innerHTML = `
+            <option value="">--Select district--</option>
+            <option value="Chittagong">Chittagong</option>
+            <option value="Cox's Bazar">Cox's Bazar</option>
+            <option value="Comilla">Comilla</option>
+            <option value="Bandarban">Bandarban</option>
+            <option value="Feni">Feni</option>
+            <option value="Khagrachari">Khagrachari</option>
+            <option value="Lakshmipur">Lakshmipur</option>
+            <option value="Noakhali">Noakhali</option>
+            <option value="Rangamati">Rangamati</option>
+        `;
+        break;
+        
+      case "Rajshahi":
+        districtSelect.innerHTML = `
+            <option value="Dhaka">--Select Districts--</option>
+            <option value="Bogra">Bogra</option>
+            <option value="Joypurhat">Joypurhat</option>
+            <option value="Naogaon">Naogaon</option>
+            <option value="Natore">Natore</option>
+            <option value="Chapainawabganj">Chapainawabganj</option>
+            <option value="Pabna">Pabna</option>
+            <option value="Rajshahi">Rajshahi</option>
+            <option value="Sirajganj">Sirajganj</option>
+        `;
+        break;
+        
+      case "Khulna":
+        districtSelect.innerHTML = `
+            <option value="Dhaka">--Select Districts--</option>
+            <option value="Bagerhat">Bagerhat</option>
+            <option value="Chuadanga">Chuadanga</option>
+            <option value="Jessore">Jessore</option>
+            <option value="Jhenaidah">Jhenaidah</option>
+            <option value="Khulna">Khulna</option>
+            <option value="Kushtia">Kushtia</option>
+            <option value="Magura">Magura</option>
+            <option value="Meherpur">Meherpur</option>
+            <option value="Narail">Narail</option>
+            <option value="Satkhira">Satkhira</option>
+        `;
+        break;
+        
+      default:
+        districtSelect.innerHTML = `<option value="">--Select District--</option>`;
+        break;
+    }
+  }
+    //   @@@@@@@@@@@@ Upazila @@@@@@@@@@@@@
+    function getUpazilas() {
+  const districtSelect = document.getElementById("district");
+  const upazilaSelect = document.getElementById("upazila");
+  const district = districtSelect.options[districtSelect.selectedIndex].value;
+  upazilaSelect.innerHTML = "";
+  
+  switch(district) {
+    case "Dhaka":
+      upazilaSelect.innerHTML = `
+        <option value="Dhaka">--Select Upazila--</option>
+        <option value="Dhaka_City">Dhaka City</option>
+        <option value="Savar">Savar</option>
+        <option value="Dohar">Dohar</option>
+        <option value="Keraniganj">Keraniganj</option>
+        <option value="Nawabganj">Nawabganj</option>
+        <option value="Tongi">Tongi</option>
+        <option value="Gazipur_Sadar">Gazipur Sadar</option>
+        <option value="Kaliganj">Kaliganj</option>
+        <option value="Kapasia">Kapasia</option>
+        <option value="Sreepur">Sreepur</option>
+        <option value="Narayanganj_Sadar">Narayanganj Sadar</option>
+        <option value="Sonargaon">Sonargaon</option>
+        <option value="Araihazar">Araihazar</option>
+        <option value="Bandar">Bandar</option>
+        <option value="Rupganj">Rupganj</option>
+        <option value="Siddhirganj">Siddhirganj</option>
+        <option value="Manikganj_Sadar">Manikganj Sadar</option>
+        <option value="Ghior">Ghior</option>
+        <option value="Harirampur">Harirampur</option>
+        <option value="Saturia">Saturia</option>
+        <option value="Shibalaya">Shibalaya</option>
+        <option value="Singair">Singair</option>
+      `;
+      break;
+      
+    case "Gazipur":
+      upazilaSelect.innerHTML = `
+        <option value="Dhaka">--Select Upazila--</option>
+        <option value="Gazipur_Sadar">Gazipur Sadar</option>
+        <option value="Kaliakoir">Kaliakoir</option>
+        <option value="Kaliganj">Kaliganj</option>
+        <option value="Sreepur">Sreepur</option>
+      `;
+      break;
+      
+    case "Narayanganj":
+      upazilaSelect.innerHTML = `
+        <option value="Dhaka">--Select Upazila--</option>
+        <option value="Narayanganj_Sadar">Narayanganj Sadar</option>
+        <option value="Araihazar">Araihazar</option>
+        <option value="Bandar">Bandar</option>
+        <option value="Rupganj">Rupganj</option>
+        <option value="Siddhirganj">Siddhirganj</option>
+      `;
+      break;
+      
+    case "Manikganj":
+      upazilaSelect.innerHTML = `
+        <option value="Dhaka">--Select Upazila--</option>
+        <option value="Manikganj_Sadar">Manikganj Sadar</option>
+        <option value="Saturia">Saturia</option>
+        <option value="Shibaloy">Shibaloy</option>
+        <option value="Singair">Singair</option>
+      `;
+      break;
+      
+    default:
+      upazilaSelect.innerHTML = `<option value="">--Select Upazila--</option>`;
+      break;
+  }
+}
+
+
+    </script>
+</body>
+</html>
